@@ -47,16 +47,16 @@ export default {
   },
   methods: {
     async fetchUsers() {
-      const res = await axios.get('http://localhost:8080/api/users');
+      const res = await axios.get('http://112.124.111.131:8080/api/users');
       this.users = res.data;
     },
     async submitUser() {
       if (this.form.id) {
         // 更新
-        await axios.put(`http://localhost:8080/api/users/${this.form.id}`, this.form);
+        await axios.put(`http://112.124.111.131:8080/api/users/${this.form.id}`, this.form);
       } else {
         // 新增
-        await axios.post('http://localhost:8080/api/users', this.form);
+        await axios.post('http://112.124.111.131:8080/api/users', this.form);
       }
       this.resetForm();
       this.fetchUsers();
@@ -66,7 +66,7 @@ export default {
     },
     async deleteUser(id) {
       if (confirm('确定删除吗？')) {
-        await axios.delete(`http://localhost:8080/api/users/${id}`);
+        await axios.delete(`http://112.124.111.131:8080/api/users/${id}`);
         this.fetchUsers();
       }
     },

@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-@CrossOrigin(origins = "http://localhost:5173")
+@CrossOrigin(origins = "*")
 @RestController  // 等价于 @Controller + @ResponseBody
 @RequestMapping("/api/users")  // 所有接口的公共路径
 public class UserController {
